@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "focustime",
-    "slug": "snack-39aa6e14-81d4-4fd0-a8ad-4fab6aea663c",
-    "version": "1.0.0",
+    "name": "MealsToGo",
+    "slug": "MealsToGo",
+    "version": "0.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
