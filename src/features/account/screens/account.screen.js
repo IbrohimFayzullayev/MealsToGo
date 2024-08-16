@@ -7,19 +7,21 @@ import {
   AccountContainer,
   AccountCover,
   AuthButton,
+  AnimationWrapper,
 } from "../components/account.styles";
 
 export const AccountScreen = ({ navigation }) => {
   return (
     <AccountBackground>
       <AccountCover />
-      <LottieView
-        key="animation"
-        autoPlay
-        loop
-        resizeMode="cover"
-        source={require("../../../../assets/watermelon.json")}
-      />
+      <AnimationWrapper>
+        <LottieView
+          style={{ width: "100%", height: "100%" }}
+          autoPlay
+          loop
+          source={require("../../../../assets/watermelon.json")}
+        />
+      </AnimationWrapper>
       <AccountContainer>
         <AuthButton
           icon="lock-open-outline"
