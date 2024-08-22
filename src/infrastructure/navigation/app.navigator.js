@@ -1,12 +1,10 @@
-import React, { useContext } from "react";
+import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
-import { Button, Text } from "react-native";
 
 import { RestaurantsNavigator } from "./restaurants.navigator";
-import { SafeArea } from "../../components/utility/safe-area.component";
+import { SettingsNavigator } from "./settings.navigator";
 import { MapScreen } from "../../features/map/screens/map.screen";
-import { AuthenticationContext } from "../../services/authentication/authentication.context";
 
 import { RestaurantsContextProvider } from "../../services/restaurants/restaurants.context";
 import { LocationContextProvider } from "../../services/location/location.context";
@@ -18,16 +16,6 @@ const TAB_ICON = {
   Restaurants: "restaurant",
   Map: "map",
   Settings: "settings",
-};
-
-const Settings = () => {
-  const { onLogout } = useContext(AuthenticationContext);
-  return (
-    <SafeArea>
-      <Text>Settings</Text>
-      <Button title="logout" onPress={onLogout} />
-    </SafeArea>
-  );
 };
 
 const createScreenOptions = ({ route }) => ({
@@ -56,7 +44,7 @@ export const AppNavigator = () => (
           />
           <Tab.Screen
             name="Settings"
-            component={Settings}
+            component={SettingsNavigator}
             options={{ headerShown: false }}
           />
         </Tab.Navigator>
